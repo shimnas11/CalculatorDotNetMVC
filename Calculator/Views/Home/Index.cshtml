@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<style>
+    .calculator {
+        background-color: #0e554e;
+        height: 350px;
+        width: 250px;
+        border-radius: 10px;
+        position: relative;
+        top: 80px;
+        left: 40%;
+    }
+
+    .display {
+        width: 140px;
+        position: relative;
+        left: 15px;
+        top: 20px;
+        height: 40px;
+        text-align:right;
+    }
+
+        .display input {
+            position: relative;
+            left: 2px;
+            top: 2px;
+            height: 35px;
+            color: black;
+            font-size: 21px;
+            text-align: right;
+        }
+
+    .display2 {
+        width: 80px;
+        position: relative;
+        left: 15px;
+        top: 20px;
+        height: 40px;
+        text-align:right;
+    }
+
+        .display2 input {
+            position: relative;
+            left: 2px;
+            top: 2px;
+            height: 35px;
+            color: black;
+            font-size: 21px;
+            text-align: right;
+        }
+
+    .keys {
+        position: relative;
+        top: 15px;
+    }
+
+    .button {
+        width: 40px;
+        height: 30px;
+        border: none;
+        border-radius: 8px;
+        margin-left: 17px;
+        cursor: pointer;
+        border-top: 2px solid transparent;
+    }
+
+    .items {
+        color: white;
+        background-color: #303030;
+    }
+</style>
+@using (Html.BeginForm("Operation", "Home", FormMethod.Post))
+{
+    <div class="calculator">
+        <input id="txtNumber" class="display text-right" type="text" value="@ViewBag.Result" name="text" />
+        <input id="txtNumber2" class="display2 text-right" type="text" value="@ViewBag.Final" />
+        <div class="keys">
+            <p>
+                <input id="btnMC" type="submit" value="MC" class=" button items" name="submit" />
+                <input id="Btnmp" type="submit" value="M+" class="button items" name="submit" />
+                <input id="Btnmm" type="submit" value="M-" class="button items" name="submit" />
+                <input id="Btnmr" type="submit" value="MR" name="submit" class="button items" />
+            </p>
+            <p>
+                <input id="btnback" type="submit" value="<--" class=" button items" name="submit" />
+                <input id="Btnpo" type="submit" value="(" class="button items" name="submit" />
+                <input id="Btnpc" type="submit" value=")" class="button items" name="submit" />
+                <input id="Btndiv" type="submit" value="/" name="submit" class="button items" />
+            </p><p>
+
+                <input id="Btn7" type="submit" value="7" class="button items" name="submit" />
+                <input id="Btn8" type="submit" value="8" class="button items" name="submit" />
+                <input id="Btn9" type="submit" value="9" class="button items" name="submit" />
+                <input id="Btnsub" type="submit" value="-" name="submit" class="button items" />
+            </p><p>
+                <input id="Btn4" type="submit" value="4" class="button items" name="submit" />
+                <input id="Btn5" type="submit" value="5" class="button items" name="submit" />
+                <input id="Btn6" type="submit" value="6" class="button items" name="submit" />
+                <input id="BtnAdd" type="submit" value="+" name="submit" class="button items" />
+            </p><p>
+                <input id="Btnone" type="submit" value="1" class="button items" name="submit" />
+                <input id="Btntwo" type="submit" value="2" class="button items" name="submit" />
+                <input id="Btn3" type="submit" value="3" class="button items" name="submit" />
+                <input id="Btnmul" type="submit" value="*" class="button items" name="submit" />
+            </p><p>
+                <input id="Btn0" type="submit" value="0" class="button items" name="submit" />
+                <input id="Btndot" type="submit" value="." class="button items" name="submit" />
+                <input id="Btnclear" type="submit" value="C" class="button items" name="submit" />
+                <input id="Btnres" type="submit" value="=" class="button items" name="submit" />
+            </p>
+
+        </div>
+    </div>
+
+    <input id="hdnHistory" type="hidden" value="@ViewBag.History" name="History" />
+    
+}
+
+
